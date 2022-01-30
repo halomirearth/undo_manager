@@ -1,4 +1,4 @@
-package undo.utils;
+package undo.utils.stack;
 
 /**
  * Basic interface of a Stack's functionality.

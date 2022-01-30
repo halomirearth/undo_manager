@@ -1,7 +1,9 @@
 package undo.utils;
 
 import java.util.ArrayDeque;
+import java.util.ArrayList;
 import java.util.Deque;
+import java.util.List;
 
 public class DropoutStack<T> implements Stack<T>{
   private final Deque<T> dropoutStack = new ArrayDeque<>();
@@ -37,6 +39,19 @@ public class DropoutStack<T> implements Stack<T>{
 
   @Override
   public int search(T t) {
-    return 0;
+    List<T> stackEntries = new ArrayList<>();
+    this.dropoutStack.iterator().forEachRemaining(stackEntries::add);
+    int index = stackEntries.indexOf(t);
+    return index == -1 ? index : index + 1;
+  }
+
+  @Override
+  public int size() {
+    return this.dropoutStack.size();
+  }
+
+  @Override
+  public void clear() {
+    this.dropoutStack.clear();
   }
 }

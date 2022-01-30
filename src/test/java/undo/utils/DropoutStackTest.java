@@ -8,6 +8,8 @@ import java.util.List;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import undo.utils.stack.DropoutStack;
+import undo.utils.stack.Stack;
 
 public class DropoutStackTest {
   private List<Object> mockObjects;

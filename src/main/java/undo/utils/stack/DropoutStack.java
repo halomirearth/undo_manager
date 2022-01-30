@@ -1,4 +1,4 @@
-package undo.utils;
+package undo.utils.stack;
 
 import java.util.ArrayDeque;
 import java.util.ArrayList;

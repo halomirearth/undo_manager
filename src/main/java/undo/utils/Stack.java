@@ -36,10 +36,23 @@ public interface Stack<T> {
   T push(T t);
 
   /**
-   * Checks if the object is in the stack and determines the distance to the top of the stack.
+   * Checks if the object is in the stack and determines the
+   * distance to the top of the stack. (1-based position)
    *
    * @param t the object to search for.
-   * @return the distance to the top of the stack. If not found -1.
+   * @return the distance to the top of the stack. If not found -1. If on top 1.
    */
   int search(T t);
+
+  /**
+   * Returns the current size of the stack.
+   *
+   * @return the number of elements in the stack.
+   */
+  int size();
+
+  /**
+   * Removes all entries from the stack.
+   */
+  void clear();
 }

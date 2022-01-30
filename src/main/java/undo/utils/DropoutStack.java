@@ -5,7 +5,11 @@ import java.util.Deque;
 
 public class DropoutStack<T> implements Stack<T>{
   private final Deque<T> dropoutStack = new ArrayDeque<>();
+  private final int maxSize;
 
+  public DropoutStack(int maxSize) {
+    this.maxSize = maxSize;
+  }
 
   @Override
   public boolean empty() {
@@ -25,6 +29,9 @@ public class DropoutStack<T> implements Stack<T>{
   @Override
   public T push(T t) {
     this.dropoutStack.push(t);
+    if (this.dropoutStack.size() > this.maxSize) {
+      this.dropoutStack.removeLast();
+    }
     return this.peek();
   }
 

@@ -1,7 +1,7 @@
 package undo.utils;
 
 /**
- * Basic interface of a Stack, based on Java's implementation and documentation.
+ * Basic interface of a Stack's functionality.
  *
  * @param <T> class of the Stack items.
  */

@@ -11,7 +11,8 @@ public class ExerciseUndoManager implements UndoManager {
 
   @Override
   public void registerChange(Change change) {
-
+    this.availableUndos.push(change);
+    this.availableRedos.clear();
   }
 
   @Override

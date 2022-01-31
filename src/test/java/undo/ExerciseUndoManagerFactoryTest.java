@@ -6,6 +6,9 @@ import static org.mockito.Mockito.mock;
 
 import org.junit.Test;
 
+/**
+ * This test and verifies the creation of an {@link UndoManager} by the {@link UndoManagerFactory}.
+ */
 public class ExerciseUndoManagerFactoryTest {
   private static final int DEFAULT_BUFFER_SIZE = 5;
 

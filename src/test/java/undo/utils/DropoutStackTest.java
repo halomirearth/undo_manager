@@ -12,7 +12,7 @@ import undo.utils.stack.DropoutStack;
 import undo.utils.stack.Stack;
 
 /**
- * The tests the implementation of Stack as Dropout Stack.
+ * The tests the implementation of {@link Stack} as {@link DropoutStack}.
  */
 public class DropoutStackTest {
   private List<Object> mockObjects;

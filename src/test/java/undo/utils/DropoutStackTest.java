@@ -11,6 +11,9 @@ import org.junit.Test;
 import undo.utils.stack.DropoutStack;
 import undo.utils.stack.Stack;
 
+/**
+ * The tests the implementation of Stack as Dropout Stack.
+ */
 public class DropoutStackTest {
   private List<Object> mockObjects;
   private Stack<Object> dropoutStack;

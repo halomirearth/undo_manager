@@ -27,8 +27,18 @@ public class ExerciseUndoManager implements UndoManager {
   }
 
   @Override
-  public void undo() {
-
+  public void undo() throws IllegalStateException {
+    if (!canUndo()) {
+      throw new IllegalStateException("Nothing to undo.");
+    }
+    Change peekChange = this.availableUndos.peek();
+    try {
+      peekChange.revert(this.document);
+    } catch (Exception e) {
+      throw new IllegalStateException("Error when trying to revert change.");
+    }
+    Change poppedChange = this.availableUndos.pop();
+    this.availableRedos.push(poppedChange);
   }
 
   @Override
@@ -38,6 +48,16 @@ public class ExerciseUndoManager implements UndoManager {
 
   @Override
   public void redo() {
-
+    if (!canRedo()) {
+      throw new IllegalStateException("Nothing to redo.");
+    }
+    Change peekedChange = this.availableRedos.peek();
+    try {
+      peekedChange.apply(this.document);
+    } catch (Exception e) {
+      throw new IllegalStateException("Error when trying to apply change.");
+    }
+    Change poppedChange = this.availableRedos.pop();
+    this.availableUndos.push(poppedChange);
   }
 }

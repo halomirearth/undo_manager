@@ -2,7 +2,6 @@ package undo;
 
 public class ExerciseUndoManager implements UndoManager {
   private final Document document;
-  private final int bufferSize;
 
   public ExerciseUndoManager(Document document, int bufferSize) {
     this.document = document;

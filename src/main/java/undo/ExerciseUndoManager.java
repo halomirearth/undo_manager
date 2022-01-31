@@ -17,7 +17,7 @@ public class ExerciseUndoManager implements UndoManager {
 
   @Override
   public boolean canUndo() {
-    return false;
+    return !this.availableUndos.empty();
   }
 
   @Override
@@ -27,7 +27,7 @@ public class ExerciseUndoManager implements UndoManager {
 
   @Override
   public boolean canRedo() {
-    return false;
+    return !this.availableRedos.empty();
   }
 
   @Override
